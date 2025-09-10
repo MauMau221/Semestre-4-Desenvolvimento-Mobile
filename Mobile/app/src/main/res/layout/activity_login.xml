@@ -7,6 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esqueceu a senha?"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Relembrar senha"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
     <ImageView
         android:id="@+id/carImage"
         android:layout_width="wrap_content"
@@ -131,4 +157,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.624"
         app:srcCompat="@drawable/lock" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="266dp"
+        android:layout_height="52dp"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.891" />
+
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="36dp"
+        android:layout_height="35dp"
+        app:srcCompat="@drawable/__icon__question_mark_circle_outline_"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="525dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        app:srcCompat="@drawable/__icon__circle_tick_"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="493dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
