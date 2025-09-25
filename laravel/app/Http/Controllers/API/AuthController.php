@@ -2,26 +2,16 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
-class AuthController extends Controller
+class AuthController
 {
     /**
-     * Create a new AuthController instance.
+     * Autentica um usuário e retorna um token JWT.
      *
-     * @return void
-     */
-    public function __construct()
-    {
-        // O middleware 'auth:api' será aplicado a todos os métodos, exceto 'login'.
-        $this->middleware('auth:api', ['except' => ['login']]);
-    }
-
-    /**
-     * Get a JWT via given credentials.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function login(Request $request)
@@ -36,7 +26,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Get the authenticated User.
+     * Retorna os dados do usuário autenticado.
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -46,7 +36,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Log the user out (Invalidate the token).
+     * Invalida o token do usuário (logout).
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -58,20 +48,9 @@ class AuthController extends Controller
     }
 
     /**
-     * Refresh a token.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function refresh()
-    {
-        return $this->respondWithToken(auth('api')->refresh());
-    }
-
-    /**
-     * Get the token array structure.
+     * Formata a resposta com o token JWT.
      *
      * @param  string $token
-     *
      * @return \Illuminate\Http\JsonResponse
      */
     protected function respondWithToken($token)
@@ -83,3 +62,4 @@ class AuthController extends Controller
         ]);
     }
 }
+

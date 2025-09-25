@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('descricao');
             $table->integer('quantidade');
             $table->double('valor_unitario');
-            $table->double('valor_total');
             $table->timestamps();
         });
     }

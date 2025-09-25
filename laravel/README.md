@@ -16,6 +16,10 @@ Backend para aplicação mobile com autenticação usando Laravel Sanctum.
 git clone <seu-repositorio>
 cd laravel
 composer install
+composer require tymon/jwt-auth
+php artisan vendor:publish --provider="Tymon\\JWTAuth\\Providers\\LaravelServiceProvider"
+php artisan jwt:secret
+
 ```
 
 ### 2. Configure o ambiente
