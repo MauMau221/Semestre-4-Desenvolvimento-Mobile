@@ -1,6 +1,8 @@
-package com.example.mobile.network
+package com.example.mobile.data
 
 import android.content.Context
+import com.example.mobile.data.api.ApiService
+import com.example.mobile.data.api.dtos.AuthInterceptor
 import com.example.mobile.utils.PrefsHelper
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

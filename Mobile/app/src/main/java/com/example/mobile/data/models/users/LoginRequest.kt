@@ -1,4 +1,4 @@
-package com.example.mobile.network.models
+package com.example.mobile.data.models.users
 
 data class LoginRequest(
     val email: String,

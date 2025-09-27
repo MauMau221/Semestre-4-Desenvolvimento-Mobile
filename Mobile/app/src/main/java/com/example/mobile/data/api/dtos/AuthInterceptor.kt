@@ -1,4 +1,4 @@
-package com.example.mobile.network
+package com.example.mobile.data.api.dtos
 
 import com.example.mobile.utils.PrefsHelper
 import okhttp3.Interceptor

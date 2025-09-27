@@ -1,4 +1,4 @@
-package com.example.mobile.network
+package com.example.mobile.data.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,7 +16,7 @@ object ApiClient {
             .build()
     }
 
-    val retrofit: Retrofit by lazy {
+    val retrofit: Retrofit by lazy { //by lazy indica que o retrofit só será iniciado quando for usado a primeira vez
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(client)
