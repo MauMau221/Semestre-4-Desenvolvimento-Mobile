@@ -22,8 +22,8 @@ class HomeActivity : AppCompatActivity() {
             try {
                 val response = api.getClientes()
                 if (response.isSuccessful) {
-                    val cliente = response.body()
-                    userText.text = "Bem Vindo. ${cliente?.nome}"
+                    val user = response.body()
+                    userText.text = "Bem Vindo. ${user?.nome}"
                 } else {
                     userText.text = "Erro: ${response.code()}"
                 }
