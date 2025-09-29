@@ -16,16 +16,13 @@ use App\Http\Controllers\API\FinanceiroController;
 |--------------------------------------------------------------------------
 */
 
-// Rota de Autenticação pública (não requer token)
 Route::post('login', [AuthController::class, 'login']);
 
 // Grupo de rotas protegidas que exigem um token JWT válido
 Route::middleware('auth:api')->group(function () {
-    // Rotas de autenticação (protegidas)
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('me', [AuthController::class, 'me']);
 
-    // Endpoints CRUD para os recursos da aplicação
     Route::apiResource('clientes', ClienteController::class);
     Route::apiResource('veiculos', VeiculoController::class);
     Route::apiResource('ordens-servico', OrdemServicoController::class);
