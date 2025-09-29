@@ -1,6 +1,6 @@
 package com.example.mobile.data.api
 
-import com.example.mobile.data.api.dtos.ClienteDTO
+import ClienteResponse
 import com.example.mobile.data.models.clientes.Clientes
 import com.example.mobile.data.models.users.LoginRequest
 import com.example.mobile.data.models.users.LoginResponse
@@ -13,7 +13,7 @@ interface ApiService {
     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
 
     @GET("clientes")
-    suspend fun getClientes(): Response<ClienteDTO>
+    suspend fun getClientes(): Response<ClienteResponse>
 
     @GET("user")
     suspend fun getUser(): Response<User>
