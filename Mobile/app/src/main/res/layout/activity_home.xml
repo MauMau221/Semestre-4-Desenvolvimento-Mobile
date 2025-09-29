@@ -7,10 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.theme.features.HomeActivity">
 
-<<<<<<< HEAD
-=======
-
->>>>>>> dc84c1c854f23cbe6603ebc5e063d54da7d6b118
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewClientes"
         android:layout_width="0dp"
@@ -19,9 +15,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< HEAD
         tools:listitem="@layout/item_cliente" /> </androidx.constraintlayout.widget.ConstraintLayout>
-=======
-        tools:listitem="@layout/item_cliente" />
-</androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> dc84c1c854f23cbe6603ebc5e063d54da7d6b118
