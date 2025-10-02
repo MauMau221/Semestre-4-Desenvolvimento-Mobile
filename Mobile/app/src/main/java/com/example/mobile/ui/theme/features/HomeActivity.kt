@@ -2,6 +2,8 @@ package com.example.mobile.ui.theme.features
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mobile.R
 import com.example.mobile.data.RetrofitClient
 import com.example.mobile.ui.theme.features.clientes.ClienteAdapter
+import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -19,6 +22,9 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        val toolbar: MaterialToolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
         //Referencia para o recyclerView no layout
         val recyclierView = findViewById<RecyclerView>(R.id.recyclerViewClientes)
@@ -69,6 +75,25 @@ class HomeActivity : AppCompatActivity() {
                     ).show()
                 }
             }
+        }
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu) // Use o nome do seu arquivo XML
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                Toast.makeText(this, "Configurações clicado", Toast.LENGTH_SHORT).show()
+                // Adicione a lógica para abrir a tela de configurações ou realizar a ação
+                true
+            }
+            R.id.action_search -> {
+                Toast.makeText(this, "Pesquisar clicado", Toast.LENGTH_SHORT).show()
+                // Adicione a lógica para a ação de pesquisa
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
