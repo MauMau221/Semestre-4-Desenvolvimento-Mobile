@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/mail"
+        android:title="HOME"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/nav_os"
+        android:icon="@drawable/mail"
+        android:title="O.S"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/nav_clients"
+        android:icon="@drawable/mail"
+        android:title="CLIENTES"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/nav_agenda"
+        android:icon="@drawable/mail"
+        android:title="AGENDA"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/nav_extra"
+        android:icon="@drawable/mail"
+        android:title="EXTRA"
+        app:showAsAction="ifRoom"/>
+
+</menu>

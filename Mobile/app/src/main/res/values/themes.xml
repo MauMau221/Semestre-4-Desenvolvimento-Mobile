@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.Mobile" parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="Theme.Mobile.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Aqui garantimos que nenhuma action bar será mostrada -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

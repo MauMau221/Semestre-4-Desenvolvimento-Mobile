@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/design_default_color_background"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,6 +16,8 @@
         android:paddingRight="16dp">
 
         <!-- Car illustration placeholder -->
+
+        <!-- Login title -->
         <ImageView
             android:id="@+id/carIllustration"
             android:layout_width="410dp"
@@ -23,10 +25,10 @@
             android:contentDescription="Car illustration"
             android:src="@drawable/car_solo"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Login title -->
         <TextView
             android:id="@+id/loginTitle"
             android:layout_width="wrap_content"
@@ -41,20 +43,22 @@
             app:layout_constraintTop_toBottomOf="@id/carIllustration" />
 
         <!-- Subtitle text -->
+
+        <!-- Login/Register tabs -->
         <TextView
             android:id="@+id/subtitleText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="Fazendo login você aceita os\nTermos de uso e privacidade"
             android:textColor="@color/gray_text"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginTitle" />
 
-        <!-- Login/Register tabs -->
         <LinearLayout
             android:id="@+id/tabLayout"
             android:layout_width="wrap_content"
@@ -162,36 +166,40 @@
             app:layout_constraintTop_toBottomOf="@id/rememberCheckBox" />
 
         <!-- Login button -->
+
+        <!-- Social login text -->
         <Button
             android:id="@+id/loginButton"
-            android:text="Login"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/button"
+            android:layout_marginTop="8dp"
+            android:background="@color/red_primary"
+            android:text="Login"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/forgotPasswordText" />
-
-        <!-- Social login text -->
-        <TextView
-            android:id="@+id/socialLoginText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Ou conecte com"
-            android:textColor="@color/gray_text"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/loginButton" />
 
         <!-- Social media buttons -->
 
         <!-- Red footer background -->
+
+        <TextView
+            android:id="@+id/socialLoginText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Ou conecte com"
+            android:textColor="@color/gray_text"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginButton" />
+
         <LinearLayout
             android:id="@+id/socialButtonsLayout"
             android:layout_width="wrap_content"

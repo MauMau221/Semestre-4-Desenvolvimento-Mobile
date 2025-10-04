@@ -23,9 +23,6 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val toolbar: MaterialToolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
         //Referencia para o recyclerView no layout
         val recyclierView = findViewById<RecyclerView>(R.id.recyclerViewClientes)
 
@@ -75,25 +72,6 @@ class HomeActivity : AppCompatActivity() {
                     ).show()
                 }
             }
-        }
-    }
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu) // Use o nome do seu arquivo XML
-        return true
-    }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> {
-                Toast.makeText(this, "Configurações clicado", Toast.LENGTH_SHORT).show()
-                // Adicione a lógica para abrir a tela de configurações ou realizar a ação
-                true
-            }
-            R.id.action_search -> {
-                Toast.makeText(this, "Pesquisar clicado", Toast.LENGTH_SHORT).show()
-                // Adicione a lógica para a ação de pesquisa
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
         }
     }
 }
