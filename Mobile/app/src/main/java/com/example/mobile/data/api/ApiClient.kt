@@ -1,12 +1,13 @@
 package com.example.mobile.data.api
 
+import com.example.mobile.data.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
 object ApiClient {
-    private const val BASE_URL = "http://10.0.2.2:8000/api/"
+    private const val BASE_URL = Constants.BASE_URL
     private val client by lazy {
         val logging = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY

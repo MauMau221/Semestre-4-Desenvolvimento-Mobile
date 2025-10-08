@@ -1,5 +1,6 @@
 package com.example.mobile.ui.theme.features
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -13,6 +14,7 @@ import com.example.mobile.R
 import com.example.mobile.data.RetrofitClient
 import com.example.mobile.ui.theme.features.clientes.ClienteAdapter
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -22,6 +24,35 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    startActivity(Intent(this, HomeActivity::class.java))
+                    true
+                }
+                R.id.nav_os -> {
+                    // Lógica para a opção "O.S"
+                    true
+                }
+                R.id.nav_clients -> {
+                    startActivity(Intent(this, ListarCliente::class.java))
+                    true
+                }
+                R.id.nav_agenda -> {
+                    // Lógica para a opção "Agenda"
+                    true
+                }
+                R.id.nav_extra -> {
+                    // Lógica para a opção "Extra"
+                    true
+                }
+                else -> false
+            }
+            }
+
 
         //Referencia para o recyclerView no layout
         val recyclierView = findViewById<RecyclerView>(R.id.recyclerViewClientes)

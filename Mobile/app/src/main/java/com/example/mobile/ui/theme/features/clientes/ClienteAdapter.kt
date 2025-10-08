@@ -25,7 +25,7 @@ class ClienteAdapter(private val clientes: List<Cliente>) :
     }
 
     //Chamado quando o RecyclerView precisa de um novo item
-    //Ele infla o XML do item e criar o ViewHolder
+    //Ele infla o XML do item e cria o ViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClienteViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_cliente, parent, false)
