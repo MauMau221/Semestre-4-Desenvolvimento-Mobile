@@ -51,7 +51,6 @@ class LoginActivity : AppCompatActivity() {
                     Log.e("LOGIN", "Erro: ${e.message}")
                 }
             }
-
         }
     }
 }

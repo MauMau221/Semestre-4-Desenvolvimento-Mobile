@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Mobile</string>
+    <string name="login_title">Login</string>
+    <string name="login_terms_and_privacy">Fazendo login você aceita os\nTermos de uso e privacidade</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Senha</string>
+    <string name="login_remember_password">Lembrar senha</string>
+    <string name="login_forgot_password">Esqueceu a senha?</string>
+    <string name="login_connect_with">Ou conecte-se com</string>
+
+    <string name="login_car_illustration_desc">Ilustração de um carro</string>
+    <string name="login_facebook_desc">Login com Facebook</string>
+    <string name="login_instagram_desc">Login com Instagram</string>
+    <string name="login_pinterest_desc">Login com Pinterest</string>
+    <string name="login_linkedin_desc">Login com LinkedIn</string>
 </resources>
