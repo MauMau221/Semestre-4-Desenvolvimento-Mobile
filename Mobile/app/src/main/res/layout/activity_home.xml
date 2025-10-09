@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorSurfaceContainerLowest"
-    tools:context=".ui.theme.features.HomeActivity">
+    tools:context=".ui.theme.features.main.HomeActivity">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"

@@ -1,4 +1,4 @@
-package com.example.mobile.ui.theme.features.main
+package com.example.mobile.ui.theme.features.os
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

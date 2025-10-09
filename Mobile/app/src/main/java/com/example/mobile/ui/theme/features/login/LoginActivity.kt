@@ -9,9 +9,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.mobile.R
-import com.example.mobile.data.RetrofitClient
-import com.example.mobile.data.models.users.LoginRequest
-import com.example.mobile.ui.theme.features.HomeActivity
+import com.example.mobile.data.remote.RetrofitClient
+import com.example.mobile.data.remote.dtos.LoginRequest
+import com.example.mobile.ui.theme.features.main.HomeActivity
 import com.example.mobile.utils.PrefsHelper
 import kotlinx.coroutines.launch
 

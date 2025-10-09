@@ -1,6 +1,6 @@
-package com.example.mobile.data.api
+package com.example.mobile.data.remote
 
-import com.example.mobile.data.Constants
+import com.example.mobile.data.remote.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient

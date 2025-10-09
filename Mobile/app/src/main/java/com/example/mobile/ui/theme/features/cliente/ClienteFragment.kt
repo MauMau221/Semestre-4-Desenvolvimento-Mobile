@@ -1,4 +1,4 @@
-package com.example.mobile.ui.theme.features.main
+package com.example.mobile.ui.theme.features.cliente
 
 import android.os.Bundle
 import android.util.Log
@@ -11,8 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobile.R
-import com.example.mobile.data.RetrofitClient
-import com.example.mobile.ui.theme.features.clientes.ClienteAdapter
+import com.example.mobile.data.remote.RetrofitClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
