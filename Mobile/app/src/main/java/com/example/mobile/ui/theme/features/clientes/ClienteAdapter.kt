@@ -7,20 +7,30 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobile.R
-import com.example.mobile.data.models.clientes.Clientes
-
 class ClienteAdapter(private val clientes: List<Cliente>) :
     RecyclerView.Adapter<ClienteAdapter.ClienteViewHolder>() {
 
     // 1. O ViewHolder: Mapeia as views do item_cliente.xml
     class ClienteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nomeTextView: TextView = itemView.findViewById(R.id.textViewNomeCliente)
-        private val emailTextView: TextView = itemView.findViewById(R.id.textViewEmailCliente)
+        private val nomeTextView: TextView = itemView.findViewById(R.id.tv_cliente_nome)
+        private val cpfTextView: TextView = itemView.findViewById(R.id.tv_cliente_cpf)
+        private val dataTextView: TextView = itemView.findViewById(R.id.tv_data)
+
+        private val veiculosModeloTextView: TextView = itemView.findViewById(R.id.tv_veiculo) // Use o ID do seu layout
+        private val veiculosPlacaTextView: TextView = itemView.findViewById(R.id.tv_placa)
+
 
         // Conecta os dados do cliente ás views
         fun bind(cliente: Cliente) {
             nomeTextView.text = cliente.nome
-            emailTextView.text = cliente.email
+            cpfTextView.text = cliente.cpfCnpj
+            dataTextView.text = cliente.createdAt
+
+
+            if (cliente.veiculos.isNotEmpty()) {
+            veiculosModeloTextView.text = cliente.veiculos.joinToString { it.modelo.toString() }
+            veiculosPlacaTextView.text = cliente.veiculos.joinToString { it.placa.toString() }
+            }
         }
     }
 

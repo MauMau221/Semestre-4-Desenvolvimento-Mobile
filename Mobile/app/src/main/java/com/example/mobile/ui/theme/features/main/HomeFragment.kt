@@ -41,62 +41,12 @@ class HomeFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-
-        //Referencia para o recyclerView no layout
-        val recyclierView = view.findViewById<RecyclerView>(R.id.recyclerViewClientes)
-
-        //Define como os itens serão organizados (Lista vertical)
-        recyclierView.layoutManager = LinearLayoutManager(requireContext())
-
-        //Pega a instancia do serviço de API
-        val api = RetrofitClient.getInstance(requireContext())
-
-        lifecycleScope.launch {
-            try {
-                val response = api.getClientes()
-                if (response.isSuccessful) {
-                    val clientes = response.body()
-
-                    Log.d("HOME_ACTIVITY_DEBUG", "O corpo da resposta é nulo? ${clientes == null}")
-
-
-                    // Acessa a lista de clientes DENTRO do objeto de resposta
-                    val listaDeClientes = clientes?.data
-                    Log.d("HOME_ACTIVITY_DEBUG", "A lista 'data' é nula? ${listaDeClientes == null}")
-                    Log.d("HOME_ACTIVITY_DEBUG", "Tamanho da lista: ${listaDeClientes?.size}")
-
-                    if (listaDeClientes?.isNotEmpty() == true) {
-                        Log.d("HOME_ACTIVITY_DEBUG", "Primeiro cliente: ${listaDeClientes.firstOrNull()}")
-                    }
-
-
-                    if (!listaDeClientes.isNullOrEmpty()) {
-                        //cria o adapter com lista e conecta no recyclerView
-                        val adapter = ClienteAdapter(listaDeClientes)
-                        recyclierView.adapter = adapter
-                    }else {
-                        Toast.makeText(requireContext(), "Nenhum cliente encontrado", Toast.LENGTH_SHORT).show()
-                    }
-                }else {
-                    Toast.makeText(requireContext(), "Erro ao carregar clientes: ${response.code()}",
-                        Toast.LENGTH_SHORT).show()
-                }
-            } catch (e: Exception) {
-                withContext(Dispatchers.Main) {
-                    Log.e("HOME_ACTIVITY", "Falha na conexão/parsing: ${e.message}")
-                    Toast.makeText(
-                        requireContext(),
-                        "Falha na conexão com o servidor.",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }
-        }
-
-        return view;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     companion object {

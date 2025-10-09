@@ -12,7 +12,9 @@ class ClienteController extends Controller
 {
     public function index(): JsonResponse
     {
-        return response()->json(Cliente::paginate(15));
+        $clientes = Cliente::with('veiculos')->paginate(15);
+
+        return response()->json($clientes);
     }
 
     public function store(StoreClienteRequest $request): JsonResponse
