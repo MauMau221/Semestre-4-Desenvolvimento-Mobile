@@ -9,9 +9,11 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import android.app.Activity
 import com.example.mobile.R
+import com.example.mobile.R.id.emailEditText
 import com.example.mobile.data.remote.RetrofitClient
 import com.example.mobile.data.remote.dtos.NewClienteRequest
 import kotlinx.coroutines.launch
+import com.example.mobile.data.remote.dtos.Cliente as ClienteDTO
 
 class AddClienteActivity : AppCompatActivity() {
 
@@ -24,12 +26,32 @@ class AddClienteActivity : AppCompatActivity() {
 
         Log.d(TAG, "Activity criada. Referenciando as views...")
 
-        val editTextName = findViewById<EditText>(R.id.et_client_name)
-        val editTextCpfCnpj = findViewById<EditText>(R.id.et_client_cpf_cnpj)
-        val editTextEmail = findViewById<EditText>(R.id.et_client_email)
-        val editTextTelefone = findViewById<EditText>(R.id.et_client_telefone)
-        val editTextEndereco = findViewById<EditText>(R.id.et_client_endereco)
+        val editTextName = findViewById<EditText>(R.id.nameText)
+        val editTextCpfCnpj = findViewById<EditText>(R.id.cpfText)
+        val editTextEmail = findViewById<EditText>(emailEditText)
+        val editTextTelefone = findViewById<EditText>(R.id.telefoneText)
+        val editTextEndereco = findViewById<EditText>(R.id.ruaText)
         val saveButton = findViewById<Button>(R.id.btn_save_client)
+
+        val clienteId = intent.getIntExtra("cliente_id", -1)
+        if (clienteId != -1) {
+            // Modo edição: buscar dados e preencher
+            val api = RetrofitClient.getInstance(this)
+            lifecycleScope.launch {
+                try {
+                    val resp = api.getCliente(clienteId)
+                    if (resp.isSuccessful) {
+                        resp.body()?.let { c ->
+                            editTextName.setText(c.nome ?: "")
+                            editTextCpfCnpj.setText(c.cpfCnpj ?: "")
+                            editTextEmail.setText(c.email ?: "")
+                            editTextTelefone.setText(c.telefone ?: "")
+                            editTextEndereco.setText(c.endereco ?: "")
+                        }
+                    }
+                } catch (_: Exception) {}
+            }
+        }
 
         saveButton.setOnClickListener {
             Log.d(TAG, "Botão Salvar CLICADO!")
@@ -65,7 +87,11 @@ class AddClienteActivity : AppCompatActivity() {
 
             Log.d(TAG, "Objeto a ser enviado para a API: $newClient")
 
-            createClientOnApi(newClient)
+            if (clienteId == -1) {
+                createClientOnApi(newClient)
+            } else {
+                updateClientOnApi(clienteId, newClient)
+            }
         }
     }
 
@@ -93,6 +119,24 @@ class AddClienteActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 Log.e(TAG, "ERRO DE CONEXÃO OU CÓDIGO! A chamada falhou.", e) // O 'e' no final imprime o erro completo
                 Toast.makeText(this@AddClienteActivity, "Falha na conexão com o servidor.", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    private fun updateClientOnApi(id: Int, request: NewClienteRequest) {
+        val api = RetrofitClient.getInstance(this)
+        lifecycleScope.launch {
+            try {
+                val response = api.updateCliente(id, request)
+                if (response.isSuccessful) {
+                    Toast.makeText(this@AddClienteActivity, "Cliente atualizado!", Toast.LENGTH_LONG).show()
+                    setResult(Activity.RESULT_OK)
+                    finish()
+                } else {
+                    Toast.makeText(this@AddClienteActivity, "Erro ao atualizar: ${response.code()}", Toast.LENGTH_LONG).show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@AddClienteActivity, "Falha: ${e.message}", Toast.LENGTH_LONG).show()
             }
         }
     }

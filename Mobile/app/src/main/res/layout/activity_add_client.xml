@@ -1,75 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fitsSystemWindows="true"
+    tools:context=".ui.theme.features.cliente.AddClienteActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        tools:context=".ui.theme.features.cliente.AddClienteActivity">
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView3"
+        android:layout_width="0dp"
+        android:layout_height="931dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Novo Cliente"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
-
-        <!-- Campo Nome (Obrigatório) -->
-        <EditText
-            android:id="@+id/et_client_name"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nome Completo *"
-            android:inputType="textPersonName" />
+            android:layout_height="match_parent"
+            android:padding="0dp">
 
-        <!-- Campo CPF/CNPJ (Obrigatório) -->
-        <EditText
-            android:id="@+id/et_client_cpf_cnpj"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="CPF ou CNPJ *"
-            android:inputType="number" />
+            <TextView
+                android:id="@+id/tv_photo_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="8dp"
+                android:text="Foto do cliente"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/baseline_camera_alt_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Campo Email (Opcional) -->
-        <EditText
-            android:id="@+id/et_client_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_client_photo"
+                android:layout_width="110dp"
+                android:layout_height="73dp"
+                android:padding="2dp"
+                android:src="@drawable/baseline_person_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_photo_label"
+                app:strokeColor="?attr/colorPrimary"
+                app:strokeWidth="1dp" />
 
-        <!-- Campo Telefone (Opcional) -->
-        <EditText
-            android:id="@+id/et_client_telefone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Telefone"
-            android:inputType="phone" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_select_photo"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SELECIONAR FOTO"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_client_photo" />
 
-        <!-- Campo Endereço (Opcional) -->
-        <EditText
-            android:id="@+id/et_client_endereco"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Endereço"
-            android:inputType="textPostalAddress" />
+            <TextView
+                android:id="@+id/tv_personal_data_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="8dp"
+                android:text="Dados Pessoais"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/baseline_person_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_select_photo" />
 
-        <Button
-            android:id="@+id/btn_save_client"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Salvar Cliente" />
+            <EditText
+                android:id="@+id/nameText"
+                android:layout_width="395dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Nome do cliente"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.301"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_personal_data_label" />
 
-    </LinearLayout>
-</ScrollView>
+            <EditText
+                android:id="@+id/cpfText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="CPF / CNPJ"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="308dp" />
+
+            <EditText
+                android:id="@+id/telefoneText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Telefone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/cpfText"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="308dp" />
+
+            <TextView
+                android:id="@+id/tv_personal_data_label2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:drawablePadding="8dp"
+                android:text="Endereço"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/baseline_person_24"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="366dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/ruaText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Nome da rua"
+                app:layout_constraintEnd_toStartOf="@+id/ruaNumeroText"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="390dp" />
+
+            <EditText
+                android:id="@+id/ruaNumeroText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Numero"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="390dp" />
+
+            <Button
+                android:id="@+id/btn_save_client"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Adicionar Cliente"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="451dp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/editTextText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.067"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

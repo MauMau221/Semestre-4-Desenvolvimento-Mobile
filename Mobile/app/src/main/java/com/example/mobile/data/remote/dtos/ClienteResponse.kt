@@ -1,3 +1,5 @@
+package com.example.mobile.data.remote.dtos
+
 import com.google.gson.annotations.SerializedName
 
 // Classe que representa o objeto de paginação COMPLETO

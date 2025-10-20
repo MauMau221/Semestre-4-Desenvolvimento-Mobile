@@ -14,4 +14,28 @@
 
     <!-- Input colors -->
     <color name="input_border">#E5E7EB</color>
+    
+    <!-- Chip colors -->
+    <color name="chip_selected">#D32F2F</color>
+    <color name="chip_unselected">#E0E0E0</color>
+    
+    <!-- Status colors -->
+    <color name="status_pendente">#FFC107</color>
+    <color name="status_andamento">#2196F3</color>
+    <color name="status_concluido">#4CAF50</color>
+    <color name="status_cancelado">#F44336</color>
+    
+    <!-- Background colors -->
+    <color name="background_light">#F5F5F5</color>
+    <color name="background_dark">#121212</color>
+    
+    <!-- Card colors -->
+    <color name="card_background_light">#FFFFFF</color>
+    <color name="card_background_dark">#1E1E1E</color>
+    
+    <!-- Text colors -->
+    <color name="text_primary_light">#000000</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary_light">#666666</color>
+    <color name="text_secondary_dark">#CCCCCC</color>
 </resources>

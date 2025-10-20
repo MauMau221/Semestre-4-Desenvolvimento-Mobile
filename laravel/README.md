@@ -49,7 +49,7 @@ php artisan migrate
 
 ### 5. Inicie o servidor
 ```bash
-php artisan serve
+php artisan serve --host=0.0.0.0 --port=8000
 ```
 
 ## 🔗 Endpoints da API

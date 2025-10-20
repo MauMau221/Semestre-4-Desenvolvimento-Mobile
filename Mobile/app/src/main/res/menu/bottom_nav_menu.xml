@@ -3,27 +3,27 @@
 
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/mail"
+        android:icon="@drawable/outline_add_home_24"
         android:title="HOME"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/nav_os"
-        android:icon="@drawable/mail"
+        android:icon="@drawable/order_service"
         android:title="O.S"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/nav_clients"
-        android:icon="@drawable/mail"
+        android:icon="@drawable/client"
         android:title="CLIENTES"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/nav_agenda"
-        android:icon="@drawable/mail"
+        android:icon="@drawable/outline_calendar_month_24"
         android:title="AGENDA"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/nav_extra"
-        android:icon="@drawable/mail"
+        android:icon="@drawable/extra"
         android:title="EXTRA"
         app:showAsAction="ifRoom"/>
 

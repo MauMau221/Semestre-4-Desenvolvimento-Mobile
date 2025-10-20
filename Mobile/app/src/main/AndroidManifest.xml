@@ -36,6 +36,24 @@
             android:exported="false"
             android:theme="@style/Theme.Mobile.NoActionBar"
             android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".ui.theme.features.os.AddOSActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.features.cliente.ClienteDetalhesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.features.cliente.VeiculoFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.features.os.OSDetalhesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.features.os.ItemVistoriaFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.features.os.ItemOrcamentoFormActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

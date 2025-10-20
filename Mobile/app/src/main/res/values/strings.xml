@@ -1,4 +1,18 @@
 <resources>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <!-- Login strings -->
+    <string name="login_car_illustration_desc">Car illustration</string>
+    <string name="login_connect_with">Connect with</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_facebook_desc">Facebook</string>
+    <string name="login_forgot_password">Forgot password?</string>
+    <string name="login_instagram_desc">Instagram</string>
+    <string name="login_linkedin_desc">LinkedIn</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_pinterest_desc">Pinterest</string>
+    <string name="login_remember_password">Remember password</string>
+    <string name="login_terms_and_privacy">Terms and Privacy</string>
+    <string name="login_title">Login</string>
 </resources>
